@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/recipe.css">
+    <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+  <h1>Recipe World</h1>
+  </header>
+
+<p>search up a drink and get some ingredients to try at home</p> 
+
+<form action="/post/createRecipe" method="POST">
+  <div class="mb-3">
+      <label for="drink" class="form-label">Cocktail Name</label>
+      <input type="text"  id="drink" name="drinkName">
+  </div>
+  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+</form>
+
+
+<div class="col-6 mt-5">
+  <a class="btn btn-primary" href="/profile">Return to Profile</a>
+  <a class="btn btn-primary" href="/feed">Return to Feed</a>
+</div>
+
+
+<%- include('partials/footer') -%>

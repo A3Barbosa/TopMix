@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+}
+
+h1{
+color:gold;
+}
+
+.tab{
+height:900px;
+width:200%;
+border:1px solid black;
+float:left;
+margin-left:-110%;
+}
+
+
+.img-fluid{
+height:300px;
+width:30%;
+border: 1px solid black;
+}

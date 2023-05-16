@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/feed.css">
+    <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
+</head>
+
+  <header class="top">
+   <h1><i class="fa-solid fa-martini-glass-citrus"></i>Top Mix</h1>
+   <section class="nav">
+    <a href="/feed"><i class="fa-solid fa-house"></i></a>
+    <a href="/recipe"><i class="fa-solid fa-book-open"></i></a>
+    <a href="/upload"><i class="fa-solid fa-plus"></i></a>
+    <a href="/favorite"><i class="fa-sharp fa-solid fa-bookmark"></i></a>
+    <a href="/profile"><i class="fa-solid fa-user"></i></a>
+   </section>
+  </header>
+  <h2>Feed</h2>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-comment"></i>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+
+
+
+  
+
+  
+<%- include('partials/footer') -%>

@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+
+.top{
+height:100px;
+width:100%;
+border:1px solid black;
+color: gold;
+background-color:whitesmoke;
+}
+
+
+.nav{
+float:left;
+}
+
+.img-fluid{
+width:50%;
+}
