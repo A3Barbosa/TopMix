@@ -13,12 +13,18 @@
 <p>search up a drink and get some ingredients to try at home</p> 
 
 <section class="box">
-  <input type="text" name="" value="" placeholder="cocktail name">
+  <input id="recipeSearch" type="text"  name="" value="" placeholder="cocktail name">
   <button type="button" name="button">click</button>
   <h3 id="show"></h3>
 </section>
 
 <ul></ul>
+
+<form id="recipeForm" action="/post/createRecipe" method="POST">
+ <input name="recipeName" id="recipeName">
+ <input type="hidden" name="instructions" id="instructionsInput">
+ <button type="submit">save recipe</button>
+</form>
 
 <div class="col-6 mt-5">
   <a class="btn btn-primary" href="/profile">Return to Profile</a>

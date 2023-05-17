@@ -1,4 +1,4 @@
-//user will click for temp. and get back the weather from any country or city they type in, using API.
+
 
 document.querySelector('button').addEventListener('click', getDrink)
 
@@ -12,9 +12,16 @@ function getDrink() {
       document.querySelector('#show').innerText = data[0].instructions
       for (let i = 0; i <=data[0].ingredients.length; i++){
         let item = document.createElement('li')
+        let input = document.createElement('input')
+        input.name='ingredients'
+        input.type='hidden'
         document.querySelector('ul').appendChild(item)
         item.innerText= data[0].ingredients[i]
+        input.value=data[0].ingredients[i]
+        document.querySelector('#recipeForm').appendChild(input) 
       }
+      document.querySelector('#recipeName').value=document.querySelector('#recipeSearch').value
+      document.querySelector('#instructionsInput').value=document.querySelector('#show').innerText
     })
 
 

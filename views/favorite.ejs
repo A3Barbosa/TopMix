@@ -5,6 +5,15 @@
 
 <p>save your favorite drinks and recipes here!</p>
 
+<%for(var i=0; i<recipes.length; i++) {%>
+  <h3><%= recipes[i].recipeName %></h3>
+  <ul>
+  <%for(var j=0; j<recipes[i].ingredients.length; j++) {%>
+  <li><%= recipes[i].ingredients[j]%></li>
+  <% } %>
+  </ul>
+  <h3><%= recipes[i].instructions %></h3>
+  <% } %>
 
 
 <div class="col-6 mt-5">

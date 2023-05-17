@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/comment");
+const Recipe = require("../models/Recipe");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -42,8 +43,9 @@ module.exports = {
 
   getFavorite: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("favorite.ejs", { posts: posts });
+      console.log(req.user._id)
+      const recipes = await Recipe.find({user:req.user._id}).sort({ createdAt: "desc" }).lean();
+      res.render("favorite.ejs", { recipes: recipes });
     } catch (err) {
       console.log(err);
     }
@@ -73,6 +75,23 @@ module.exports = {
         caption: req.body.caption,
         rating: req.body.rating,
         likes: 0,
+        user: req.user.id,
+      });
+      console.log("Post has been added!");
+      res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+
+  createRecipe: async (req, res) => {
+    try {
+      console.log('recipe', req.body)
+      await Recipe.create({
+        recipeName: req.body.recipeName,
+        instructions: req.body.instructions,
+        ingredients: req.body.ingredients,
         user: req.user.id,
       });
       console.log("Post has been added!");
