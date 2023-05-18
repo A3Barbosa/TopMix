@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+
 <!doctype html>
 <html>
 <head>
@@ -31,12 +31,12 @@
           </div>
         <% } %>
         </ul>
+        <form action="/feed" method="GET" id="sortForm">
+         <input type ="radio" name="sort" value="sortByLikes" class="buttonOne">
+         <label for="sortByLikes">sort by popularity</label>
+         <input type ="radio" name="sort" value="sortByRecent" class="buttonOne">
+         <label for="sortByRecent">sort by most recent</label>
+        </form>
     </div>
   </div>  
-
-
-
-  
-
-  
-<%- include('partials/footer') -%>
+<script type="text/javascript" src="feed.js"></script>
