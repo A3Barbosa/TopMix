@@ -24,6 +24,13 @@
         </form>
           <%for(var i=0; i<comments.length; i++) {%>
            <h3><%= comments[i].comment %></h3>
+           <form
+           action="/post/deleteComment/<%= comments[i]._id%>?_method=DELETE"
+           method="POST"
+           class="col-3"
+         >
+           <button class="btn btn-primary fa fa-trash" type="submit"></button>
+         </form>
            <% } %>
 
         <%if(post.user == user.id){ %>
@@ -39,6 +46,9 @@
     </div>
     <div class="col-3 mt-5">
       <p><%= post.caption %></p>
+      <p><%= post.drinkName %></p>
+      <p><%= post.rating %></p>
+    
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>

@@ -54,12 +54,11 @@ module.exports = {
 
   getPost: async (req, res) => {
     try {
-      const Comments = await Comment.find().sort({ createdAt: "desc" }).lean()
+      const Comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean()
       const post = await Post.findById(req.params.id);
       res.render("post.ejs", { post: post, user: req.user, comments:Comments });
     } catch (err) {
-      console.log(err);
-    }
+      }
   },
 
 
@@ -148,7 +147,20 @@ module.exports = {
     }
   },
 
+  
 
+
+
+  deleteComment: async (req, res) => {
+    try {
+      await Comment.remove({ _id: req.params.id});
+      console.log("Deleted Post");
+      res.redirect(req.header('Referer')||`/post`)
+      
+    } catch (err) {
+      res.redirect(`/post`);
+    }
+  },
 
 
 
@@ -166,4 +178,10 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+
 };
+
+
+
+
+
