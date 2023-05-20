@@ -26,11 +26,12 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       let sortObject={ createdAt: "desc" }
-      if (req.body.sort == 'sortByLikes'){
+      if (req.query.sort == 'sortByLikes'){
         sortObject= {
           likes: "desc"
         }
       }
+      console.log(req.query, sortObject)
       const posts = await Post.find().sort(sortObject).lean();
       res.render("feed.ejs", { posts: posts });
     } catch (err) {
