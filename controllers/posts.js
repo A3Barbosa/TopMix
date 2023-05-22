@@ -79,6 +79,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
+        location: req.body.location,
         rating: req.body.rating,
         likes: 0,
         user: req.user.id,
@@ -168,6 +169,17 @@ module.exports = {
       res.redirect(`/post`);
     }
   },
+
+  // deleteFavorite: async (req, res) => {
+  //   try {
+  //     await Recipe.remove({ _id: req.params.id});
+  //     console.log("Deleted Post");
+  //     res.redirect(req.header('Referer')||`/post`)
+      
+  //   } catch (err) {
+  //     res.redirect(`/favorite`);
+  //   }
+  // },
 
 
 

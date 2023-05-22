@@ -18,6 +18,11 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
 
+  location: {
+    type: String,
+    required: true,
+  },
+
   rating: {
     type: String,
     required: true,

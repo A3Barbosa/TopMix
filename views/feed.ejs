@@ -6,36 +6,47 @@
     <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
 </head>
 
-  <header class="top">
-   <h1><i class="fa-solid fa-martini-glass-citrus"></i>Top Mix</h1>
+  <header>
    <section class="nav">
-    <a href="/feed"><i class="fa-solid fa-house"></i></a>
-    <a href="/recipe"><i class="fa-solid fa-book-open"></i></a>
-    <a href="/upload"><i class="fa-solid fa-plus"></i></a>
-    <a href="/favorite"><i class="fa-sharp fa-solid fa-bookmark"></i></a>
-    <a href="/profile"><i class="fa-solid fa-user"></i></a>
+      <a href="/feed" class="a">Home</a>
+			<a href="/upload" class="a">Upload A Picture</a>
+			<a href="/profile" class="a">Profile</a>
+			<a href="/recipe" class="a">Recipes</a>
+			<a href="/favorite" class="a">My Favorite</a>
    </section>
   </header>
-  <h2>Feed</h2>
+
+   <section class="top">
+    <h1><i class="fa-solid fa-martini-glass-citrus"></i>Top Mix</h1>
+    <h3>Night Feed</h3>
+   </section>
+
+    
   <div class="container">
     <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+      <ul class="row list-unstyled news-feed">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">  
+          <li class="ccol-md-6 col-lg-4 mb-4">
+            <div class="news-item">
+            <a href="/post/<%= posts[i]._id%>" class="drink-container">
+              <img class="img-fluid" src="<%= posts[i].image%>">
             </a>
-          </li>
-          <div class="col-3 mt-5">
-            <p><%= posts[i].drinkName %></p>
-          </div>
+            <div class="drinkName-overlay">
+             <p><%= posts[i].drinkName %></p>
+            </div>
+         </div>
+        </li>
         <% } %>
         </ul>
         <form action="/feed" method="GET" id="sortForm">
-         <input type ="radio" name="sort" value="sortByLikes" class="buttonOne">
-         <label for="sortByLikes">sort by popularity</label>
-         <input type ="radio" name="sort" value="sortByRecent" class="buttonOne">
-         <label for="sortByRecent">sort by most recent</label>
+          <div class="radio-button">
+            <input type ="radio" name="sort" value="sortByLikes" class="buttonOne">
+            <label for="sortByLikes">sort by popularity</label>
+          </div>
+          <div class="radio-button">
+            <input type ="radio" name="sort" value="sortByRecent" class="buttonOne">
+            <label for="sortByRecent">sort by most recent</label>
+         </div>
         </form>
     </div>
   </div>  

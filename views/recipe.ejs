@@ -6,30 +6,49 @@
     <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-  <h1>Recipe World</h1>
-  </header>
+ <header> 
+  <section class="list">
+      <a href="/feed">Home</a></li>
+			<a href="/upload">Upload A Picture</a></li>
+			<a href="/profile">Profile</a></li>
+			<a href="/recipe">Recipes</a></li>
+			<a href="/favorite">My Favorite</a></li>
+    </section>
+ </header>
 
-<p>search up a drink and get some ingredients to try at home</p> 
+  <section class="layout">
+    <h1>Recipe World</h1>
+  </section>
 
-<section class="box">
-  <input id="recipeSearch" type="text"  name="" value="" placeholder="cocktail name">
-  <button type="button" name="button">click</button>
+  <!-- <img src="/imgs/cocktail2.jpeg" class="pic1"> -->
+  <!-- <img src= "https://media.tenor.com/QpSs2LHdjcYAAAAC/cocktail-drinks.gif" class="pic1"> -->
+  <img src="https://static.wixstatic.com/media/84465c_7df556d2553c4aa0b668f0190b38e0a0~mv2.gif" class="pic1">
+  
+ 
+  
+
+
+
+  <h2>search up a drink and get some ingredients to try at home & save them to your favorite page!</h2>
+
+ <section class="box">
+   <section class="miniBox">
+    <input id="recipeSearch" type="text"  name="" value="" placeholder="cocktail name">
+    <button type="button" name="button">click</button>
+   </section>
+  <ul></ul>
+
+
   <h3 id="show"></h3>
-</section>
 
-<ul></ul>
 
-<form id="recipeForm" action="/post/createRecipe" method="POST">
- <input name="recipeName" id="recipeName">
- <input type="hidden" name="instructions" id="instructionsInput">
- <button type="submit">save recipe</button>
-</form>
+  <form id="recipeForm" action="/post/createRecipe" method="POST">
+  <input name="recipeName" id="recipeName">
+  <input type="hidden" name="instructions" id="instructionsInput">
+  <button type="submit">save recipe</button>
+  </form>
 
-<div class="col-6 mt-5">
-  <a class="btn btn-primary" href="/profile">Return to Profile</a>
-  <a class="btn btn-primary" href="/feed">Return to Feed</a>
-</div>
+  </section> 
 <script type= "text/javascript" src="main.js"></script>
 </body>
 <%- include('partials/footer') -%>

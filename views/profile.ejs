@@ -1,44 +1,54 @@
-<%- include('partials/header') -%>
+
 <!doctype html>
 <html>
-<head>
-    <link rel="stylesheet" href="/css/profile.css">
-    <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+      <link rel="stylesheet" href="/css/profile.css">
+      <script src="https://kit.fontawesome.com/b341104090.js" crossorigin="anonymous"></script>
+  </head>
+ <body>
+  <header>
+    <section class="nav">
+      <a href="/feed" class="a">Home</a>
+      <a href="/upload" class="a">Upload A Picture</a>
+      <a href="/profile" class="a">Profile</a>
+      <a href="/recipe" class="a">Recipes</a>
+      <a href="/favorite" class="a">My Favorite</a>
+  </section>
+    </header>
 
-<header>
   <h1>Profile</h1>
-  </header>
+  <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+
 <div class="container">
   <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+      <div class="col-6 profile-section">
+        <div class="profile-info">
+        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+          <div class="user-info">
+              <h3 class="username"><strong>User Name</strong>: <%= user.userName %></h3>
+              <p class="email"><strong>Email</strong>: <%= user.email %></p>
           </div>
-      </div>
-      <div class="col-6">
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-          <a class="btn btn-primary" href="/recipe">Recipe</a>
-          <a class="btn btn-primary" href="/favorite">Favorite</a>
-        </div>  
-        <section class="tab">
-          <ul class="row list-unstyled"> 
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
+        </div>
+     </div>
+ 
+        <div class="col-6">
+          <section class="picture-container">
+            <ul class="row list-unstyled"> 
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li class="col-6 justify-content-between mt-4">
+              <a href="/post/<%= posts[i]._id%>">
+                <div class="image-container">
+                  <img class="img-fluid post-image" src="<%= posts[i].image%>">
+               </div>
+              </a>
+            </li>
          <% } %>
          </ul>
         </section>
+        </div>
       </div>  
     </div>
-  </div>
-</div>
-<%- include('partials/footer') -%>
+ </body>
+</html>
 
   <!--<ul class="row list-unstyled"> -->
