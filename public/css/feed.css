@@ -3,9 +3,6 @@
 }
 
 
-body{
-color: #f2f2f2;
-}
 
 .top{
 height:160px;
@@ -13,7 +10,6 @@ width:100%;
 border:1px solid black;
 color:white;
 text-align: center;
-background-color:whitesmoke;
 background-image: url(../imgs/light.jpeg);
 background-repeat: no-repeat;
 background-size:cover;
