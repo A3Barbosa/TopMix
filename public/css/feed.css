@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+
+body{
+color: #f2f2f2;
+}
+
 .top{
 height:160px;
 width:100%;
@@ -9,10 +14,19 @@ border:1px solid black;
 color:white;
 text-align: center;
 background-color:whitesmoke;
-background-image: url(../imgs/frisco.jpeg);
+background-image: url(../imgs/light.jpeg);
 background-repeat: no-repeat;
-background-size: cover;
+background-size:cover;
 background-position: center center;
+}
+
+h1{
+font-size:3rem;
+}
+
+h3{
+font-size: 1rem;
+margin-top: -2%;;
 }
 
 
@@ -40,6 +54,7 @@ width:80%;
   color:black;
 }
 
+
 .nav:link,
 .nav:visited,
 .nav:focus {
@@ -58,7 +73,7 @@ flex: 1;
 text-decoration: none;
 outline: none;
 text-align: center;
-line-height: 3;
+line-height: 1;
 color: black;
 }
 
@@ -86,7 +101,7 @@ width:50%;
 .news-feed {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:space-around;
 }
 
 .news-item {
@@ -99,6 +114,8 @@ width:50%;
 
 .news-item .drink-container {
   display: block;
+  width: 280px;
+  height:260px;
 }
 
 .news-item img {
@@ -130,5 +147,6 @@ width:50%;
 
 #sortForm {
   margin-top: 20px;
+  color:black;
 }
 

@@ -13,32 +13,32 @@
       <a href="/profile" class="a">Profile</a>
       <a href="/recipe" class="a">Recipes</a>
       <a href="/favorite" class="a">My Favorite</a>
-  </section>
-    </header>
-
-  <h1>Profile</h1>
-  <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-
+    </section>
+   </header>
+   
+    <h1>Profile</h1>
+    
 <div class="container">
   <div class="row mt-5">
       <div class="col-6 profile-section">
         <div class="profile-info">
-        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+        <img src='' class="profile-picture">
           <div class="user-info">
               <h3 class="username"><strong>User Name</strong>: <%= user.userName %></h3>
               <p class="email"><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="logout">Logout</a>
           </div>
         </div>
      </div>
  
         <div class="col-6">
           <section class="picture-container">
-            <ul class="row list-unstyled"> 
+            <ul class="row list-unstyled pro-feed"> 
           <% for(var i=0; i<posts.length; i++) {%>
-            <li class="col-6 justify-content-between mt-4">
-              <a href="/post/<%= posts[i]._id%>">
+            <li class="profile-item">
+              <a href="/post/<%= posts[i]._id%>" class="drink-container">
                 <div class="image-container">
-                  <img class="img-fluid post-image" src="<%= posts[i].image%>">
+                  <img  src="<%= posts[i].image%>">
                </div>
               </a>
             </li>
@@ -48,7 +48,7 @@
         </div>
       </div>  
     </div>
- </body>
+  </body>
 </html>
 
   <!--<ul class="row list-unstyled"> -->

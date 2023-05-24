@@ -3,6 +3,16 @@
 }
 
 
+.logout{
+color:orange;
+text-decoration: none;
+}
+
+body{
+  color: #f2f2f2;
+  }
+
+
 .nav{
   list-style: none;
   color: red;
@@ -41,7 +51,7 @@ flex: 1;
 text-decoration: none;
 outline: none;
 text-align: center;
-line-height: 3;
+line-height: 1;
 color: black;
 }
 
@@ -50,78 +60,118 @@ color: black;
 } 
 
 h1{
-color:gold;
+color:orange;
+font-size: 3rem;
+}
+
+.logout{
+margin-left:35%;
 }
 
 .container {
+  margin-top: 50px;
   padding: 20px;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.row{
+  justify-content: center;
 }
 
 .profile-section {
-  background-color: #fafafa;
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .profile-info {
   display: flex;
   align-items: center;
+  margin-top:-3%;
 }
 
-.profile-picture {
-  width: 80px;
-  height: 80px;
+/* .profile-picture {
+  width: 100px;
+  height: 100px;
+  border:1px solid black;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 20px;
-}
+} */
 
 .user-info {
-  flex-grow: 1;
+  font-size: 18px;
+  width: 200px;
+  height: 200px;
+  border:1px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  background-color: lightgrey;
 }
 
 .username {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin-top:52px;
+  margin-left:6%;
 }
 
 .email {
-  color: #666;
-  font-size: 16px;
+  color: black;
+  margin-left:5%; 
 }
 
 .picture-container {
-  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid black;
+  height: 700px;
+  width: 90%;
+  align-items: center;
 }
 
-.picture-container ul {
-  margin: 0;
-  padding: 0;
+
+.pro-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: -5px; /* Adjust the spacing between images */
 }
 
-.picture-container li {
-  list-style: none;
+.pro-feed li {
+  flex: 0 0 calc(33.33% - 10px); /* Adjust the width of each image container */
+  margin: 5px; /* Adjust the spacing between images */
 }
 
-.image-container {
+.pro-feed .image-container {
   width: 100%;
-  padding-bottom: 100%;
-  position: relative;
 }
 
-.post-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+.pro-feed img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* .picture-container li {
+  width: calc(40% - -38px);
+  margin-bottom: 230px;
+} */
+
+/* .profile-item{
+  position:static;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.profile-item .drink-container {
+  display: block;
+  width: 300px;
+  height:100px;
+}
+
+.profile-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-}
+} */
+
+

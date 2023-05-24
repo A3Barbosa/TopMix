@@ -19,6 +19,6 @@ router.delete("/deletePost/:id", postsController.deletePost);
 
 router.delete("/deleteComment/:id", postsController.deleteComment);
 
-// router.delete("/deleteFavorite/:id", postsController.deleteFavorite);
+router.delete("/deleteFavorite/:id", postsController.deleteFavorite);
 
 module.exports = router;

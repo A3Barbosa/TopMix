@@ -170,16 +170,16 @@ module.exports = {
     }
   },
 
-  // deleteFavorite: async (req, res) => {
-  //   try {
-  //     await Recipe.remove({ _id: req.params.id});
-  //     console.log("Deleted Post");
-  //     res.redirect(req.header('Referer')||`/post`)
+  deleteFavorite: async (req, res) => {
+    try {
+      await Recipe.remove({ _id: req.params.id});
+      console.log("Deleted Post");
+      res.redirect('/favorite')
       
-  //   } catch (err) {
-  //     res.redirect(`/favorite`);
-  //   }
-  // },
+    } catch (err) {
+      res.redirect(`/favorite`);
+    }
+  },
 
 
 

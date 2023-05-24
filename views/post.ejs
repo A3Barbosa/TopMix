@@ -18,18 +18,31 @@
         >
           <button class="btn btn-danger fa fa-heart" type="submit"></button>
         </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
+        <h3 class="col-3"><%= post.likes %></h3>
+        <%if(post.user == user.id){ %>
+          <form
+            action="/post/deletePost/<%= post.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          >
+            <button class="btn btn-danger fa fa-trash" type="submit"></button>
+          </form>
+          <%}%>
 
 
         <form action="/post/comment/<%= post.id %>" method="POST">
-          <div class="mb-3">
+          <div class="comment-section">
+            <div class="comment-card">
+              <div class="comment-content">
               <label for="comment" class="form-label"></label>
               <input type="text" class="form-control" id="comment" name="comment">
               <button type="submit" class="btn btn-danger" value="Upload">Submit</button>
-          </div>
+            </div>
+           </div>
+         </div>
         </form>
           <%for(var i=0; i<comments.length; i++) {%>
-          <div class="comment">
+          <div class="comment-card">
             <h3><%= comments[i].comment %></h3>
             <form
             action="/post/deleteComment/<%= comments[i]._id%>?_method=DELETE"
@@ -41,28 +54,37 @@
          </div>
            <% } %>
 
-        <%if(post.user == user.id){ %>
+        <!-- <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
           <button class="btn btn-danger fa fa-trash" type="submit"></button>
-        </form>
+        </form> -->
         <%}%>
       </div>
     </div>
     <div class="col-3 mt-5">
       <div class="profile-section">
       <div class="profile-info">
+      <div class="profile-item">
+          <span>Caption:</span>
           <p><%= post.caption %></p>
-          <span>Drink Name:</span>
-          <p><%= post.drinkName %></p>
-          <span>Rating:</span>
-          <p><%= post.rating %></p>
-          <span>Location:</span>
-          <p><%= post.location %></p>
+        <div class="profile-item">
+            <span>Drink Name:</span>
+            <p><%= post.drinkName %></p>
+          </div>
+        <div class="profile-item">
+            <span>Rating:</span>
+            <p><%= post.rating %></p>
+          </div>
+         <div class="profile-item">
+            <span>Location:</span>
+            <p><%= post.location %></p>
+          </div>
         </div>
+      </div>
       </div>
     </div>
 

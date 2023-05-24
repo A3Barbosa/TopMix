@@ -18,7 +18,7 @@
   <h1 class="title">Favorite Drink & Recipe</h1>
 
   <section class="container">
-    <p>Your favortie Drink's & Recipe Saved Here:</p>
+    <p>Your Favorite Drink's & Recipe Saved Here:</p>
  
     <%for(var i=0; i<recipes.length; i++) {%>
      <div class="recipe-container">
@@ -29,22 +29,15 @@
       <% } %>
       </ul>
       <h3 class="instructions"><%= recipes[i].instructions %></h3>
+      <form
+      action="/post/deleteFavorite/<%= recipes[i]._id%>?_method=DELETE"
+      method="POST"
+      class="col-3"
+    >
+      <button class="btn btn-primary fa fa-trash" type="submit"></button>
+    </form>
       <% } %>
      </div>
   </section>
-  <!-- <%for(var i=0; i<recipes.length; i++) {%>
-    <h3><%= recipes[i].recipeName %></h3>
-    <form
-    action="/post/deleteFavorite/<%= recipes[i]._id%>?_method=DELETE"
-    method="POST"
-    class="col-3"
-  >
-    <button class="btn btn-primary fa fa-trash" type="submit"></button>
-  </form>
-    <% } %> -->
-
-
-
-
 
 <%- include('partials/footer') -%>
